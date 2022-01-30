@@ -91,7 +91,10 @@ public class UrlControllerTest {
         service.save(url);
         this.mockMvc.perform(get("/url/statistic"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("[{\"url\":\"test\",\"calls\":0}]"));
+                .andExpect(content().string("[{\""
+                        + "url\":\"https://job4j.ru/profile/exercise/106/task-view/532\""
+                        + ",\"calls\":1}"
+                        + ",{\"url\":\"test\",\"calls\":0}]"));
     }
 
 }

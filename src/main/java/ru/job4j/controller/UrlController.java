@@ -37,12 +37,10 @@ public class UrlController {
 
     @GetMapping("/redirect/{code}")
     public ResponseEntity redirect(@PathVariable String code) throws URISyntaxException {
-        var url = service.findUrlByShortcut(code);
+        var url = service.updateAndGet(code);
         if (url.isPresent()) {
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.setLocation(new URI(url.get().getName()));
-            url.get().setCalls(url.get().getCalls() + 1);
-            service.save(url.get());
             return new ResponseEntity(httpHeaders, HttpStatus.MOVED_PERMANENTLY);
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Url not found");

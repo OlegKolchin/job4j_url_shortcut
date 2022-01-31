@@ -9,6 +9,7 @@ import ru.job4j.repository.SiteRepository;
 import ru.job4j.repository.UrlRepository;
 import ru.job4j.repository.PersonRepository;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -80,6 +81,12 @@ public class AppService {
 
     public Optional<Url> findUrlByShortcut(String shortCut) {
         return urlRepository.findUrlByShortcut(shortCut);
+    }
+
+    @Transactional
+    public Optional<Url> updateAndGet(String shortcut) {
+        urlRepository.updateCalls(shortcut);
+        return urlRepository.findUrlByShortcut(shortcut);
     }
 
     public Optional<Url> findUrlByName(String name) {

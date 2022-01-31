@@ -16,3 +16,7 @@ Sending shortcut to "/redirect" redirects user to mapped url (authorization not 
 
 Authorized user can get statistics for all registered urls
 ![ScreenShot](images/5.png)
+
+
+### Contact
+If you have any questions, feel free to contact me: oleg.kolchin.j@gmail.com

@@ -4,10 +4,12 @@ Url Shortcut
 This project is the REST-app: Url shortcut service. Users can register their sites and then receive shortcuts for urls. 
 
 ### Used technologies:
-#### Backend
 1. Spring Boot(Web, Data, Security)
-2. JWT (for authentication and authorization)
-3. PostgreSQL
+2. Spring Data
+3. Spring Web
+4. Spring Security
+5. JWT (for authentication and authorization)
+6. PostgreSQL
 
 ### Functionality:
 
